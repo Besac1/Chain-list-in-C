@@ -6,7 +6,7 @@
 ** Login   <cholle_a@etna-alternance.net>
 ** 
 ** Started on  Wed Oct 26 09:39:19 2016 CHOLLET Axel
-** Last update Wed Oct 26 14:20:25 2016 CHOLLET Axel
+** Last update Wed Oct 26 16:41:02 2016 CHOLLET Axel
 */
 
 #include "my_params_in_list.h"
@@ -28,9 +28,7 @@ int		*my_params_in_list(int argc, char **argv)
   tmp = list;
   while (tmp != NULL)
     {
-      my_putchar('\n');
       my_putstr(tmp->param);
-      my_putchar('\n');
       my_putchar('\n');
       tmp = tmp->next;
     }
