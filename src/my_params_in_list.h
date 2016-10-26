@@ -6,7 +6,7 @@
 ** Login   <cholle_a@etna-alternance.net>
 ** 
 ** Started on  Wed Oct 26 09:39:36 2016 CHOLLET Axel
-** Last update Wed Oct 26 13:59:50 2016 CHOLLET Axel
+** Last update Wed Oct 26 18:54:18 2016 CHOLLET Axel
 */
 
 /* Prevent including file twice */
@@ -24,10 +24,12 @@ typedef struct	s_list
 
 /* PROTOTYPES */
 
-int		*my_params_in_list(int argc, char **argv);
+t_list		*my_params_in_list(int argc, char **argv);
 t_list		*add_param_to_list(t_list **list, char *param);
 void		my_putstr(char *str);
 void		my_putchar(char c);
+int		my_strlen(char *src);
+char		*my_strcpy(char *dest, char *src);
 
 /* ---------- */
 

@@ -6,15 +6,14 @@
 ** Login   <cholle_a@etna-alternance.net>
 ** 
 ** Started on  Wed Oct 26 09:39:19 2016 CHOLLET Axel
-** Last update Wed Oct 26 16:41:02 2016 CHOLLET Axel
+** Last update Wed Oct 26 18:58:06 2016 CHOLLET Axel
 */
 
 #include "my_params_in_list.h"
 
-int		*my_params_in_list(int argc, char **argv)
+t_list		*my_params_in_list(int argc, char **argv)
 {
   t_list	*list;
-  t_list	*tmp;
   int		iteration;
 
   list = NULL;
@@ -23,16 +22,10 @@ int		*my_params_in_list(int argc, char **argv)
     {
       list = add_param_to_list(&list, argv[iteration]);
       iteration++;
-    }
-
-  tmp = list;
-  while (tmp != NULL)
-    {
-      my_putstr(tmp->param);
+      my_putstr(list->param);
       my_putchar('\n');
-      tmp = tmp->next;
     }
-  return (0);
+  return (list);
 }
 
 t_list		*add_param_to_list(t_list **list, char *param)
@@ -43,8 +36,8 @@ t_list		*add_param_to_list(t_list **list, char *param)
   if (node == 0)
     return (0);
   node->next = *list;
-  node->param = param;
-  *list = node;
+  node->param = malloc(my_strlen(param) * sizeof(*param));
+  my_strcpy(node->param, param);
   return (node);
 }
 
